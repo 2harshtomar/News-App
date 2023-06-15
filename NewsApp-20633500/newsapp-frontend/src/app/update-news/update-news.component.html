@@ -1,0 +1,56 @@
+<div class="card mt-5">
+  <div class="card-header">
+    Update News
+  </div>
+  <div class="card-body">
+    <form #news="ngForm" (ngSubmit)="onSubmit(news)">
+      <div class="form-group row">
+        <label for="newsTitle" class="col-sm-2 col-form-label">News Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="newsTitle" placeholder="News Title" [(ngModel)]="title"  name="title">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="newsDescription" class="col-sm-2 col-form-label">News Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="newsDescription" placeholder="News Description" [(ngModel)]="description"  name="description">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="newsAuthor" class="col-sm-2 col-form-label">News Author</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="newsAuthor" placeholder="News Author" [(ngModel)]="author"  name="author">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="newsCategory" class="col-sm-2 col-form-label">News Category</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="newscategory" [(ngModel)]="category" name="category">
+            <option value="National">National</option>
+            <option value="International">International</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="newsCategory" class="col-sm-2 col-form-label">News SubCategory</label>
+        <div class="col-sm-10">
+          <select class="form-control" id="newssubcategory" [(ngModel)]="subcategory" name="subcategory">
+            <option value="Entertainment">Entertainment</option>
+            <option value="Technology">Technology</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary" id="updateNews">Update News</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

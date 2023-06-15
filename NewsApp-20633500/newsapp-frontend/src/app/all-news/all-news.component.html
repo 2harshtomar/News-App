@@ -1,0 +1,53 @@
+<div class="card m-5">
+  <div class="card-body">
+    <input
+      [(ngModel)]="term"
+      name="searchbar"
+      id="searchBar"
+      class="form-control"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    />
+  </div>
+</div>
+
+<div class="card w-85 m-5" *ngFor="let item of (news | search: term)">
+  <div class="card-body">
+    <h5 class="card-title" id="newsTitle">{{ item.title }}</h5>
+    <small class="text-muted" id="newsCreatedAt"
+      >Created on: {{ item.date | date }}, </small
+    >
+    <small class="text-muted" id="newsCategory"
+      >Category: {{ item.category }}, </small
+    >
+    <small class="text-muted" id="newsSubCategory">SubCategory: {{ item.subcategory }}, </small>
+    <small class="text-muted" id="newsAuthor">Author: {{ item.author }}</small>
+  </div>
+  <div class="card-footer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      id="newsView"
+      [routerLink]="['/viewNews', item.id]"
+    >
+      View news
+    </button>
+    <button
+      type="button"
+      class="btn btn-success"
+      id="newsUpdate"
+      [routerLink]="['/updateNews', item.id]"
+    >
+      Update news
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      id="newsDelete"
+      (click)="deleteNews(item.id)"
+    >
+      Delete news
+    </button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/news-app">News App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home" id="home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/allNews" id="allNews" routerLinkActive="active" (click)="getAllNews()">All News</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/addNews" id="addNews" routerLinkActive="active">Add News</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/topNews" id="topNews" routerLinkActive="active">Top News</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
